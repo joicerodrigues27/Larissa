@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem Diária</title>
+    <style>
+        /* Estilos CSS */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: rgb(230, 121, 245); /* Rosa delicado */
+            background-image: url('coracoes.png'); /* Imagem de corações pequenos */
+            background-repeat: repeat; /* Repetir a imagem de fundo */
+        }
+
+        #carta-container {
+            cursor: pointer;
+        }
+
+        #carta {
+            font-size: 64px; /* Tamanho da fonte do nome */
+            color: #ff0066; /* Cor do texto da carta */
+            font-family: 'Edwardian Script ITC', cursive; /* Usar a fonte Edwardian Script ITC */
+        }
+
+        #imagem-carta {
+            width: 300px; /* Largura da imagem da carta */
+            display: block; /* Tornar a imagem de carta um bloco para posicionamento */
+            margin: 0 auto; /* Centralizar a imagem horizontalmente */
+        }
+
+        #mensagem-do-dia {
+            display: none; /* Ocultar a mensagem por padrão */
+            margin: 50px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div id="carta-container" onclick="exibirMensagemAleatoria()">
+        <div id="carta">
+            Larissa
+        </div>
+        <img id="imagem-carta" src="c:\Users\joice.rezende\Downloads\r.jpg" alt="Carta">
+    </div>
+    <div id="mensagem-do-dia">
+        <p>Aqui aparecerá a mensagem do dia.</p>
+    </div>
+    <script>
+        // Array de mensagens
+        const mensagens = [
+            "Você é incrivel minha princesa!",
+            "Cada dia eu te amo mais!",
+            "EU TE AMOOOO!",
+            "Você é perfeita!",
+            "Que seu dia seja incrivel igual você amor!",
+            "Você é per(FEITA) para mim",
+            "VOCÊ É MEU MUNDO",
+            "Eu sou a pessoa mais feliz ao seu lado!",
+            "Seu sorriso trás cor para o meu mundo!",
+            "A melhor parte do meu dia é quando escuto sua voz!",
+            "Nós pra sempre minha princesa!",
+
+            "Você é o amor da minha vida!",
+
+            "EU TE AMO EM TODOS PLANETAS!",
+            "Com você tenho os melhores sonhos!",
+
+            "Eu queria que vc se olhasse atravez dos meus olhos para ver o quanto vc é perfeita!",
+
+            "Você tem meu coração e minha admiração!",
+            "Que a gente realize tudo que sonhamos juntas",
+            "Sorte mesmo é ter você!",
+            "Ao seu ldo até o dia mais triste fica lindo!",
+            "Eu te amo a cada batida do meu coração!",
+            "Você é meu sol!",
+            "Eu sou completamente apaixonada por você!",
+            "Que cada dia que passe vc se lembre do amor ifinito que sinto por vc!",
+            "VOCÊ NÃO TEM NOÇÃO NEM DE 1% DO AMOR QUE SINTO POR VOCÊ",
+            "Entre 8bilhões de pessoas e mais de 100 decadas nos encontramos na mesma hora e no mesmo lugar, Foi o acaso mais incrivel que me aconteceu!",
+            "Você é meu primeiro e ultimo amor!",
+            "no seu olhareu vejo meu coração",
+
+            "Qualquer lugar ao seu lado é incrivel",
+
+            "Me apaixono cada dia mais por você!",
+            
+           
+            // Adicione quantas mensagens quiser
+        ];
+
+        // Função para exibir uma mensagem aleatória
+        function exibirMensagemAleatoria() {
+            const cartaContainer = document.getElementById("carta-container");
+            const mensagemElement = document.getElementById("mensagem-do-dia");
+            const mensagemAleatoria = mensagens[Math.floor(Math.random() * mensagens.length)];
+            mensagemElement.innerHTML = `<p>${mensagemAleatoria}</p>`;
+            mensagemElement.style.display = "block"; // Exibir a mensagem
+            cartaContainer.style.display = "none"; // Ocultar o nome e a imagem da carta
+        }
+    </script>
+</body>
+</html>
